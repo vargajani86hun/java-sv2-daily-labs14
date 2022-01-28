@@ -81,8 +81,24 @@ class CityTest {
     }
 
     @Test
+    void findBuildingsByStreetWithStreamTest() {
+
+        List<Building> result = city.findBuildingsByStreetWithStream("Kossuth");
+
+        assertEquals(2, result.size());
+        assertEquals(6, result.get(0).getAddress().getBuildingNumber());
+        assertEquals(11, result.get(1).getAddress().getBuildingNumber());
+    }
+
+    @Test
     void testIsThereBuildingWithMorePeopleThan() {
         assertTrue(city.isThereBuildingWithMorePeopleThan(494));
         assertFalse(city.isThereBuildingWithMorePeopleThan(496));
+    }
+
+    @Test
+    void testIsThereBuildingWithMorePeopleThanWithStream() {
+        assertTrue(city.isThereBuildingWithMorePeopleThanWithStream(494));
+        assertFalse(city.isThereBuildingWithMorePeopleThanWithStream(496));
     }
 }

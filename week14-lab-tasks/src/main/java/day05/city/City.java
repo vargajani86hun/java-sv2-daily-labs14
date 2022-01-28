@@ -76,6 +76,11 @@ public class City {
         return false;
     }
 
+    public boolean isThereBuildingWithMorePeopleThanWithStream(int numberOfPeople) {
+        return buildings.stream()
+                .anyMatch(b -> b.calculateNumberOfPeopleCanFit() >= numberOfPeople);
+    }
+
     public String getName() {
         return name;
     }
