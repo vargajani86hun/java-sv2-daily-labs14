@@ -24,8 +24,7 @@ public class StreetView {
                     addNewStreet(values[0]);
                 }
 
-                int sign = Integer.parseInt(values[1]);
-                addNewHouseNumber(values[0], sign);
+                addNewHouseNumber(values[0], Integer.parseInt(values[1]));
             }
         } catch (IOException ioe) {
             throw new IllegalStateException("Can not read file: " + fileName, ioe);
